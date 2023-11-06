@@ -5,13 +5,15 @@ const mongoose = require('mongoose');
 const fs = require('fs');
 const cookieParser = require('cookie-parser');
 const cors = require('cors');
+// const typeDefs = require('./schema/typeDefs'); 
+
 
 const { typeDefs, resolvers } = require('./schema/index');
 
 
 // // Import your schema and resolvers here
-// const typeDefs = fs.readFileSync('./schema/index', { encoding: 'utf-8' });
-// const resolvers = require('./schema/index');
+// const typeDefs = fs.readFileSync('./schema/typeDefs', { encoding: 'utf-8' });
+// const resolvers = require('./schema/resolvers');
 
 // MongoDB connection setup
 mongoose.connect(process.env.MONGODB_URI || 'mongodb+srv://mohanbeckford1:Tech263nose685%40@cluster0.6plsglq.mongodb.net', {
