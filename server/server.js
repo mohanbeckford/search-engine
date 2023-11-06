@@ -4,9 +4,10 @@ const { ApolloServer } = require('apollo-server-express');
 const mongoose = require('mongoose');
 const fs = require('fs');
 const cookieParser = require('cookie-parser');
+const cors = require('cors');
 
-const typeDefs = require('./schema'); 
-const resolvers = require('./schema/resolvers'); 
+// const typeDefs = require('./schema'); 
+// const resolvers = require('./schema/resolvers'); 
 
 
 // Import your schema and resolvers here
