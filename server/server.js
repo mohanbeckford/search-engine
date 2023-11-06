@@ -5,7 +5,6 @@ const mongoose = require('mongoose');
 const fs = require('fs');
 const cookieParser = require('cookie-parser');
 const cors = require('cors'); 
-const bcrypt = require('bcrypt');
 
 
 const { typeDefs, resolvers } = require('./schema/index');
