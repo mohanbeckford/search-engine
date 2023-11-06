@@ -5,6 +5,10 @@ const mongoose = require('mongoose');
 const fs = require('fs');
 const cookieParser = require('cookie-parser');
 
+const typeDefs = require('./schema'); 
+const resolvers = require('./schema/resolvers'); 
+
+
 // Import your schema and resolvers here
 const typeDefs = fs.readFileSync('./schema/schema.graphql', { encoding: 'utf-8' });
 const resolvers = require('./schema/resolvers');
@@ -23,6 +27,15 @@ const PORT = process.env.PORT || 3001;
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 app.use(cookieParser());
+
+
+
+app.use(cors({
+  origin: 'https://search-eng-db4a6a4c5447.herokuapp.com/', 
+  credentials: true, 
+}));
+
+
 
 // Apollo Server setup
 const server = new ApolloServer({
