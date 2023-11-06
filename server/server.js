@@ -4,14 +4,13 @@ const { ApolloServer } = require('apollo-server-express');
 const mongoose = require('mongoose');
 const fs = require('fs');
 const cookieParser = require('cookie-parser');
-const cors = require('cors');
-// const typeDefs = require('./schema/typeDefs'); 
+const cors = require('cors'); 
 
 
 const { typeDefs, resolvers } = require('./schema/index');
 
 
-// // Import your schema and resolvers here
+
 // const typeDefs = fs.readFileSync('./schema/typeDefs', { encoding: 'utf-8' });
 // const resolvers = require('./schema/resolvers');
 
