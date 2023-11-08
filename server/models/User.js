@@ -1,11 +1,10 @@
 const { Schema, model } = require('mongoose');
 const bcrypt = require('bcrypt');
-const mongoose = require('mongoose');
 
 // import schema from Book.js
 const bookSchema = require('./Book');
 
-const userSchema = new mongoose.Schema(
+const userSchema = new Schema(
   {
     username: {
       type: String,
@@ -53,8 +52,6 @@ userSchema.virtual('bookCount').get(function () {
   return this.savedBooks.length;
 });
 
-const User = mongoose.model('User', userSchema);
-// Call createIndexes to ensure indexes are created
-User.createIndexes();
+const User = model('User', userSchema);
 
 module.exports = User;
